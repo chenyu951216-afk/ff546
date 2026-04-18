@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>持股追蹤</h1>
+<div class="grid">
+  {% for s in stocks %}
+  <section class="card">
+    <h2>{{ s.stock_id }}｜{{ s.stock_name }}</h2>
+    <p>進場價：{{ s.entry_price }}</p>
+    <p>目前分數：{{ s.current_score }}　前次分數：{{ s.prev_score }}</p>
+    <p>當日漲跌：{{ s.pct_change }}%</p>
+    <p>原 thesis：{{ s.thesis }}</p>
+    <p>警示狀態：<span class="alert-{{ s.status }}">{{ s.status }}</span></p>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

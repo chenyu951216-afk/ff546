@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>警示清單</h1>
+{% for a in alerts %}
+<div class="card">
+  <h2>{{ a.stock_id }}｜{{ a.stock_name }}</h2>
+  <p><span class="alert-{{ a.level }}">{{ a.level }}</span></p>
+  <p>{{ a.reason }}</p>
+</div>
+{% else %}
+<p>目前沒有警示。</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TW Stock Insight Bot</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">台股 Insight</div>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/ranking">完整排名</a>
+      <a href="/watchlist">持股追蹤</a>
+      <a href="/alerts">警示</a>
+    </nav>
+  </aside>
+  <main class="main">{% block content %}{% endblock %}</main>
+</body>
+</html>

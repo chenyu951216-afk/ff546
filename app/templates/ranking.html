@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>完整排名</h1>
+<table>
+  <tr>
+    <th>股票編號</th><th>名稱</th><th>產業</th><th>總分</th><th>價格動能</th><th>量能</th><th>新聞加分</th><th>止損</th><th>TP1</th><th>持有天數</th>
+  </tr>
+  {% for s in all_rankings %}
+  <tr>
+    <td>{{ s.stock_id }}</td>
+    <td>{{ s.stock_name }}</td>
+    <td>{{ s.industry }}</td>
+    <td>{{ s.total_score }}</td>
+    <td>{{ s.price_action_score }}</td>
+    <td>{{ s.volume_score }}</td>
+    <td>{{ s.news_score }}</td>
+    <td>{{ s.stop_loss }}</td>
+    <td>{{ s.tp1 }}</td>
+    <td>{{ s.holding_days }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

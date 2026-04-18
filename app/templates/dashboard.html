@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>今日前 5 名候選股</h1>
+<div class="top-summary">
+  <div class="summary-card"><strong>市場主線</strong><p>{{ market_theme }}</p></div>
+  <div class="summary-card"><strong>風險摘要</strong><p>{{ risk_summary }}</p></div>
+  <div class="summary-card"><strong>本月 AI 預算</strong><p>已用 {{ usage_snapshot.spent_twd }} / {{ usage_snapshot.budget_twd }} TWD，剩餘 {{ usage_snapshot.remaining_twd }} TWD</p></div>
+  <div class="summary-card"><strong>本月 AI 月報</strong><p>{{ monthly_report.summary }}</p></div>
+</div>
+<div class="chips">
+  {% for s in hot_sectors %}
+  <span>{{ s.sector }} ({{ s.count }})</span>
+  {% endfor %}
+</div>
+<div class="grid">
+  {% for s in rankings %}
+  <section class="card">
+    <div class="row-between"><h2>{{ s.stock_id }}｜{{ s.stock_name }}</h2><span class="score">{{ s.total_score }}</span></div>
+    <div class="tags"><span>{{ s.industry }}</span><span>{{ s.ai_bias }}</span></div>
+    <p>收盤價：{{ s.close }}　漲跌幅：{{ s.pct_change }}%</p>
+    <p>止損：{{ s.stop_loss }}　TP1：{{ s.tp1 }}　TP2：{{ s.tp2 }}　TP3：{{ s.tp3 }}</p>
+    <p>建議持有：{{ s.holding_days }} 天</p>
+    <div class="ai-box">
+      <div><strong>AI 分析：</strong>{{ s.ai_summary }}</div>
+      <div><strong>AI 風險：</strong>{{ s.ai_risk }}</div>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

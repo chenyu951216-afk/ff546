@@ -1,0 +1,20 @@
+body { margin: 0; font-family: Arial, sans-serif; background: #0b1220; color: #e6edf3; display: flex; }
+.sidebar { width: 220px; min-height: 100vh; background: #101828; padding: 24px 18px; box-sizing: border-box; }
+.logo { font-size: 24px; font-weight: 700; margin-bottom: 28px; }
+.sidebar a { display:block; color:#cbd5e1; text-decoration:none; padding:10px 12px; border-radius:10px; margin-bottom:8px; }
+.sidebar a:hover { background:#1d2939; }
+.main { flex:1; padding: 28px; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; }
+.card, .summary-card { background:#111827; border:1px solid #233044; border-radius:16px; padding:16px; box-shadow:0 8px 24px rgba(0,0,0,.22); }
+.top-summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-bottom: 16px; }
+.row-between { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.score { background:#0f766e; color:#ecfeff; padding:6px 10px; border-radius:999px; font-weight:700; }
+.tags span, .chips span { display:inline-block; margin-right:8px; margin-bottom:8px; background:#1f2937; color:#a7f3d0; padding:4px 10px; border-radius:999px; font-size:12px; }
+.ai-box { margin-top:12px; padding:12px; border-radius:12px; background:#0f172a; color:#cbd5e1; line-height:1.6; }
+table { width:100%; border-collapse: collapse; background:#111827; border-radius:12px; overflow:hidden; }
+th, td { padding:12px; border-bottom:1px solid #1f2937; text-align:left; }
+th { background:#0f172a; position: sticky; top: 0; }
+.alert-紅燈 { color:#f87171; font-weight:700; }
+.alert-橘燈 { color:#fb923c; font-weight:700; }
+.alert-黃燈 { color:#facc15; font-weight:700; }
+.alert-正常 { color:#34d399; font-weight:700; }
